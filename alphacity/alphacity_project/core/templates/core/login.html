@@ -1,0 +1,8 @@
+{% extends "core/base.html" %}
+{% load static %}{% block title %}Staff login · Alphacity{% endblock %}
+{% block body %}<main class="login" style="background-image:linear-gradient(rgba(10,40,30,.82),rgba(10,40,30,.88)),url('{{ img.hero }}')"><form method="post" class="card stack">{% csrf_token %}
+<a href="/"><img class="loginlogo" src="{% static 'img/logo.svg' %}" alt="Alphacity Waste Management"></a><h2>Admin sign in</h2>
+{% if form.errors %}<p class="err">Wrong username or password.</p>{% endif %}
+<label>Username {{ form.username }}</label><label>Password {{ form.password }}</label>
+<button class="btn">Sign in</button></form></main>
+<script>document.querySelectorAll('.login input').forEach(i=>i.classList.add('input'))</script>{% endblock %}

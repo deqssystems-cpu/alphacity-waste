@@ -1,0 +1,4 @@
+{% extends "core/app.html" %}{% block content %}
+<div class="bar"><h1>Expenses</h1><div class="acts"><a class="btn sm ghost-d" href="{% url 'export' 'expenses' %}">⬇ Export CSV</a>
+<form method="get"><input class="input" type="month" name="month" value="{{ month }}" onchange="this.form.submit()"></form></div></div>
+<div id="exp">{% include "core/partials/expenses_block.html" %}</div>{% endblock %}

@@ -1,0 +1,7 @@
+<div class="card"><h3>Monthly payments <small class="{% if c.balance > 0 %}owe{% endif %}">Balance: KES {{ c.balance }} ({{ c.months_billed }} months billed, KES {{ c.total_paid }} paid)</small></h3>
+<form class="inline" hx-post="{% url 'payment_add' c.pk %}" hx-target="#pay" hx-swap="innerHTML">
+{% for f in pform %}<label>{{ f.label }}{{ f }}{{ f.errors }}</label>{% endfor %}<button class="btn sm">Record payment</button></form>
+<table class="tbl"><tr><th>Month</th><th>Amount</th><th>Method</th><th>Ref</th><th>Paid on</th><th></th></tr>
+{% for p in payments %}<tr><td>{{ p.month|date:"M Y" }}</td><td>{{ p.amount }}</td><td>{{ p.get_method_display }}</td><td>{{ p.reference }}</td><td>{{ p.paid_on }}</td>
+<td><a href="{% url 'receipt' p.pk %}" target="_blank">Receipt</a> <button class="link dl" hx-post="{% url 'payment_delete' p.pk %}" hx-target="#pay" hx-confirm="Delete this payment?">✕</button></td></tr>
+{% empty %}<tr><td colspan="6" class="muted">No payments yet.</td></tr>{% endfor %}</table></div>

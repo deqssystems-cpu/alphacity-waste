@@ -1,0 +1,40 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block body %}
+<header class="top"><a class="brand" href="/"><img class="logo" src="{% static 'img/icon.svg' %}" alt="Alphacity logo"> Alphacity <span>Waste Management</span></a>
+<nav><a href="#services">Services</a><a href="#bins">Bins</a><a href="#how">How it works</a><a href="#contact">Contact</a>
+<a class="btn sm" href="{% url 'login' %}">Staff login</a></nav></header>
+
+<section class="hero" style="background-image:linear-gradient(105deg,rgba(10,45,33,.94) 35%,rgba(10,45,33,.55)),url('{{ img.hero }}')"><div class="wrap herogrid"><div>
+<p class="tag">✔ Licensed by the County Government of Homa Bay</p>
+<h1>Cleaner streets for Oyugis, one collection at a time.</h1>
+<p class="lead">Reliable residential garbage collection, e-waste recovery and liquid waste removal for homes and businesses in Oyugis town and surroundings.</p>
+<a class="btn" href="#contact">Request a collection</a> <a class="btn ghost" href="#services">Our services</a></div><div class="herocar"><img src="{% static 'img/lorry.jpg' %}" alt="Alphacity green waste collection lorry"></div></div></section>
+
+<section class="strip"><div class="wrap"><div><b>3</b> waste services</div><div><b>4</b> bin sizes supplied</div><div><b>Monthly</b> plans &amp; receipts</div><div><b>Licensed</b> by Homa Bay County</div></div></section>
+
+<section id="services" class="wrap sec"><p class="eyebrow">What we do</p><h2>Complete waste solutions</h2><div class="grid3">
+<div class="card photo"><img loading="lazy" src="{{ img.street }}" alt="Residential waste bins lined up for collection" onerror="this.remove()"><div class="pad"><h3>Residential garbage collection</h3><p>Scheduled household pickups on a simple monthly plan, with a payment record for every month.</p></div></div>
+<div class="card photo"><div class="ph e">💻</div><div class="pad"><h3>E-waste collection</h3><p>Safe collection of old computers, phones, batteries and appliances for responsible disposal.</p></div></div>
+<div class="card photo"><div class="ph l">🚚</div><div class="pad"><h3>Liquid waste removal</h3><p>Exhauster and liquid waste services handled by trained crews, in line with county regulations.</p></div></div></div></section>
+
+<section id="why" class="wrap sec split"><div class="photoframe"><img loading="lazy" src="{% static 'img/flats.jpg' %}" alt="Uncollected rubbish piled outside apartment blocks"><span class="chip">Without regular collection</span></div>
+<div><p class="eyebrow">Why it matters</p><h2>Uncollected waste is a health risk</h2><p>Heaps of rubbish attract rats and flies, block drains and spread disease. Regular, licensed collection keeps estates clean and families healthy.</p>
+<ul class="ticks"><li>Scheduled pickups, every week</li><li>Trained crews and a proper collection lorry</li><li>Safe disposal that meets county rules</li></ul><a class="btn dark" href="#contact">Book a collection</a></div></section>
+<section id="bins" class="band"><div class="wrap"><div class="split"><div><p class="eyebrow dk">Garbage bins</p><h2>Garbage bins, delivered to your gate</h2>
+<p>We supply durable, lidded bins so waste stays contained between collections. Pick the size that suits your household or business.</p>
+<ul class="ticks"><li>60L, 120L, 240L and 660L sizes</li><li>Strong plastic, easy to wheel and clean</li><li>Pair a bin with any collection plan</li></ul><a class="btn dark" href="#contact">Order a bin</a></div>
+<div class="mosaic"><img loading="lazy" src="{{ img.bins1 }}" alt="Blue and green waste bins" onerror="this.remove()"><img loading="lazy" src="{{ img.bins2 }}" alt="Large green wheeled bin" onerror="this.remove()"><img loading="lazy" src="{{ img.bins3 }}" alt="Colour-coded bins" onerror="this.remove()"><img loading="lazy" src="{{ img.bins4 }}" alt="Black wheelie bin" onerror="this.remove()"></div></div></div></section>
+
+<section id="how" class="wrap sec"><p class="eyebrow">Simple process</p><h2>How it works</h2><div class="grid3 steps">
+<div><span>1</span><h3>Register</h3><p>Contact us and we register your household or business in our system.</p></div>
+<div><span>2</span><h3>We collect</h3><p>Our crews collect on your scheduled days. Need a bin? We deliver one.</p></div>
+<div><span>3</span><h3>Pay monthly</h3><p>Pay by M-Pesa, cash or bank. Every payment is recorded against your account.</p></div></div></section>
+
+<section class="cta" style="background-image:linear-gradient(rgba(15,61,46,.88),rgba(15,61,46,.9)),url('{{ img.pile }}')"><div class="wrap"><h2>A clean town is everyone's business.</h2><p>Join the households and businesses of Oyugis who trust Alphacity with their waste.</p><a class="btn" href="#contact">Get started</a></div></section>
+
+<section id="contact" class="wrap sec split"><div><p class="eyebrow">Contact</p><h2>Request a service</h2><p>Leave your details and our team will call you back.</p>
+<ul class="contacts"><li>📞 <a href="tel:+254795624278">+254 795 624 278</a></li><li>✉️ <a href="mailto:alphacitywaste@gmail.com">alphacitywaste@gmail.com</a></li><li>📍 Oyugis Town, Homa Bay County, Kenya</li></ul></div>
+<div class="card" id="enq">{% include "core/partials/enquiry_form.html" %}</div></section>
+<footer><img class="flogo" src="{% static 'img/logo-dark.svg' %}" alt="Alphacity Waste Management"><br>© Alphacity Waste Management · Oyugis, Homa Bay County · Licensed by the County Government of Homa Bay<br><small>Call <a href="tel:+254795624278">+254 795 624 278</a> · <a href="mailto:alphacitywaste@gmail.com">alphacitywaste@gmail.com</a></small><br><small>Built by <a href="https://www.deqssystems.app" target="_blank" rel="noopener">Deqs Systems</a> (www.deqssystems.app) · Photos courtesy of Unsplash contributors.</small></footer>
+{% endblock %}

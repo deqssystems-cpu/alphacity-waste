@@ -1,0 +1,8 @@
+<div class="stats"><div class="stat warn"><b>KES {{ total }}</b>Spent in {{ month }}</div>
+{% for n,t in by_cat|slice:":3" %}<div class="stat"><b>KES {{ t }}</b>{{ n }}</div>{% endfor %}</div>
+<div class="card"><h3>Add expense</h3><form class="inline" hx-post="{% url 'expenses' %}?month={{ month }}" hx-target="#exp" hx-swap="innerHTML">
+{% for f in form %}<label>{{ f.label }}{{ f }}{{ f.errors }}</label>{% endfor %}<button class="btn sm">Save expense</button></form></div>
+<table class="tbl"><tr><th>Date</th><th>Category</th><th>Description</th><th>Paid to</th><th>Amount</th><th></th></tr>
+{% for e in items %}<tr><td>{{ e.date }}</td><td>{{ e.get_category_display }}</td><td>{{ e.description }}</td><td>{{ e.paid_to }}</td><td class="owe">{{ e.amount }}</td>
+<td><form method="post" action="{% url 'expense_delete' e.pk %}" onsubmit="return confirm('Delete this expense?')">{% csrf_token %}<button class="link dl">✕</button></form></td></tr>
+{% empty %}<tr><td colspan="6" class="muted">No expenses recorded for this month.</td></tr>{% endfor %}</table>

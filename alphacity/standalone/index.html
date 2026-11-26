@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alphacity Waste Management · Oyugis, Homa Bay County</title>
+<meta name="description" content="Residential garbage, e-waste and liquid waste collection in Oyugis, Homa Bay County. Licensed by the County Government of Homa Bay.">
+<link rel="icon" type="image/svg+xml" href="img/icon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>html{scroll-behavior:smooth}
+:root{--g:#0f3d2e;--g2:#1c6b4f;--lime:#b7e35b;--amber:#e9a23b;--bg:#f5f3ec;--ink:#1d2a24;--mut:#6b7a72;--line:#dfdcd0}
+*{box-sizing:border-box}body{margin:0;font:16px/1.55 'DM Sans',sans-serif;background:var(--bg);color:var(--ink)}
+h1,h2,h3,.brand{font-family:Fraunces,serif}h1 small,h3 small{font:400 .8rem 'DM Sans';color:var(--mut)}
+a{color:var(--g2)}.wrap{max-width:1080px;margin:auto;padding:0 20px}.sec{padding:64px 20px}.muted{color:var(--mut)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;background:var(--g);position:sticky;top:0;z-index:5}
+.top nav{display:flex;gap:20px;align-items:center}.top a{color:#e8f1ea;text-decoration:none}.brand{color:#fff!important;font-size:1.3rem;font-weight:700;text-decoration:none}.brand span{font:400 .85rem 'DM Sans';opacity:.7;margin-left:4px}.brand.dark{color:var(--g)!important}
+.btn{display:inline-block;background:var(--lime);color:var(--g)!important;border:0;padding:12px 22px;border-radius:8px;font-weight:700;cursor:pointer;text-decoration:none;font-size:1rem}
+.btn.sm{padding:8px 14px;font-size:.9rem}.btn.ghost{background:transparent;border:2px solid var(--lime);color:#fff!important}.btn.ghost-d{background:#fff;border:1px solid var(--line)}
+.hero{background:linear-gradient(135deg,var(--g),#16553f 60%,#2a7a4f);color:#fff;padding:96px 0}.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;max-width:760px;margin:.3em 0}
+.tag{display:inline-block;background:rgba(183,227,91,.15);color:var(--lime);padding:5px 12px;border-radius:99px;font-size:.85rem}.lead{max-width:600px;font-size:1.15rem;opacity:.9;margin-bottom:28px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}.ico{font-size:2rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px}
+.band{background:var(--amber);padding:56px 0}.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.ticks{list-style:none;padding:0;font-weight:500}.ticks li:before{content:"✓ ";font-weight:700}
+footer{background:var(--g);color:#cfe0d4;text-align:center;padding:24px;font-size:.9rem}
+.stack{display:flex;flex-direction:column;gap:14px}label{display:flex;flex-direction:column;gap:5px;font-weight:500;font-size:.9rem}
+.input,input[type=text],input[type=password]{padding:10px 12px;border:1px solid #c9c6b8;border-radius:8px;font:inherit;background:#fff;width:100%}
+.errorlist{color:#b3261e;list-style:none;margin:0;padding:0;font-size:.8rem}.err{color:#b3261e}.done{text-align:center;padding:30px 0}
+.login{min-height:100vh;display:grid;place-items:center;background:var(--g)}.login .card{width:360px}
+.app{display:grid;grid-template-columns:230px 1fr;min-height:100vh}aside{background:var(--g);padding:22px;display:flex;flex-direction:column;gap:24px}
+aside nav{display:flex;flex-direction:column;gap:4px;flex:1}aside nav a{color:#d5e6d9;text-decoration:none;padding:10px 12px;border-radius:8px}aside nav a:hover{background:rgba(255,255,255,.1)}
+.link{background:none;border:0;color:#b9d3c1;cursor:pointer;font:inherit;padding:0}main{padding:30px 36px;overflow:auto}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:18px 0}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;color:var(--mut);font-size:.85rem}.stat b{display:block;font:700 1.5rem Fraunces;color:var(--g)}.stat.warn b{color:#c0561b}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eee;text-decoration:none;color:inherit;gap:12px}.row em{font-style:normal;color:var(--g2);font-weight:700}
+.tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}.tbl th{text-align:left;font-size:.8rem;color:var(--mut);text-transform:uppercase;padding:10px;background:#faf9f4}.tbl td{padding:10px;border-top:1px solid #eee}
+.filters{display:flex;gap:10px;margin:14px 0}.filters .input:last-child{max-width:220px}
+.pill{border:0;border-radius:99px;padding:4px 12px;font-size:.8rem;font-weight:700;cursor:pointer}.pill.ok{background:#d9f2dd;color:#1b6b34}.pill.no{background:#fde3cf;color:#a24a10}.owe{color:#b3261e;font-weight:700}
+.inline{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin:12px 0}.inline label{flex:1 1 120px}.info{display:flex;flex-wrap:wrap;gap:22px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.lead2{font-size:1.1rem}
+@media(max-width:800px){.split,.two,.formgrid,.app{grid-template-columns:1fr}aside{flex-direction:row;flex-wrap:wrap;padding:12px}aside nav{flex-direction:row;flex-wrap:wrap}.top nav a:not(.btn){display:none}main{padding:18px}}
+.hero{background-size:cover;background-position:center}.eyebrow{color:var(--g2);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin:0}.eyebrow.dk{color:var(--g)}
+.sec h2,.band h2{font-size:2.2rem;margin:.2em 0 .8em}.strip{background:#fff;border-bottom:1px solid var(--line)}.strip .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;padding:22px 20px;text-align:center;color:var(--mut)}.strip b{color:var(--g);font:700 1.3rem Fraunces}
+.card.photo{padding:0;overflow:hidden}.card.photo img,.ph{width:100%;height:190px;object-fit:cover;display:block}.ph{display:grid;place-items:center;font-size:4rem}.ph.e{background:linear-gradient(135deg,#1c6b4f,#0f3d2e)}.ph.l{background:linear-gradient(135deg,#e9a23b,#b86f12)}.pad{padding:20px}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mosaic img{width:100%;height:190px;object-fit:cover;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.18)}.mosaic img:nth-child(even){margin-top:24px}.btn.dark{background:var(--g);color:#fff!important}
+.steps span{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--g);color:var(--lime);font:700 1.2rem Fraunces;margin-bottom:10px}
+.cta{background-size:cover;background-position:center;color:#fff;text-align:center;padding:80px 0}.cta h2{font-size:2.4rem;margin:0 0 .3em}.login{background-size:cover;background-position:center}
+main{background:radial-gradient(circle at 100% 0,#e3efe3 0,transparent 40%),var(--bg)}.acts{display:flex;gap:10px;align-items:center}
+.banner{display:flex;justify-content:space-between;align-items:center;gap:16px;background-size:cover;background-position:center;border-radius:16px;padding:26px 30px;color:#fff;margin-bottom:6px;min-height:120px}
+.banner h1{margin:0;color:#fff}.banner p{margin:0 0 4px;color:var(--lime)}.banner small{color:#cfe0d4}.qa{display:flex;gap:8px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}.thumbs img{width:100%;height:84px;object-fit:cover;border-radius:12px;opacity:.9}
+.stat.good b{color:#1b6b34}.gain{color:#1b6b34;font-weight:700}.bar1{height:9px;background:#eee;border-radius:5px;margin:3px 0;overflow:hidden}.bar1 i{display:block;height:100%}.bar1 .in{background:var(--g2)}.bar1 .out{background:var(--amber)}
+button.dl{color:#b3261e}
+.contacts{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:10px;font-weight:500}.contacts a{color:var(--g);font-weight:700;text-decoration:none}.contacts a:hover{text-decoration:underline}
+footer a{color:var(--lime)}
+
+.logo{height:36px;width:36px;vertical-align:middle;margin-right:6px}.flogo{height:70px;margin-bottom:10px}.loginlogo{width:100%;max-width:300px;display:block;margin:0 auto 6px}
+.herogrid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.herocar img{width:100%;border-radius:16px;border:4px solid rgba(255,255,255,.25);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.photoframe{position:relative}.photoframe img{width:100%;max-height:340px;object-fit:cover;border-radius:16px;display:block}.chip{position:absolute;left:14px;bottom:14px;background:var(--amber);color:#1d2a24;font-weight:700;font-size:.8rem;padding:5px 12px;border-radius:99px}
+@media(max-width:800px){.herogrid{grid-template-columns:1fr}.herocar{display:none}}
+</style></head><body>
+
+
+<header class="top"><a class="brand" href="/"><img class="logo" src="img/icon.svg" alt="Alphacity logo"> Alphacity <span>Waste Management</span></a>
+<nav><a href="#services">Services</a><a href="#bins">Bins</a><a href="#how">How it works</a><a href="#contact">Contact</a>
+</nav></header>
+
+<section class="hero" style="background-image:linear-gradient(105deg,rgba(10,45,33,.94) 35%,rgba(10,45,33,.55)),url('https://images.unsplash.com/photo-1758707844957-559cc02df8ef?auto=format&fit=crop&q=70&w=1800')"><div class="wrap herogrid"><div>
+<p class="tag">✔ Licensed by the County Government of Homa Bay</p>
+<h1>Cleaner streets for Oyugis, one collection at a time.</h1>
+<p class="lead">Reliable residential garbage collection, e-waste recovery and liquid waste removal for homes and businesses in Oyugis town and surroundings.</p>
+<a class="btn" href="#contact">Request a collection</a> <a class="btn ghost" href="#services">Our services</a></div><div class="herocar"><img src="img/lorry.jpg" alt="Alphacity green waste collection lorry"></div></div></section>
+
+<section class="strip"><div class="wrap"><div><b>3</b> waste services</div><div><b>4</b> bin sizes supplied</div><div><b>Monthly</b> plans &amp; receipts</div><div><b>Licensed</b> by Homa Bay County</div></div></section>
+
+<section id="services" class="wrap sec"><p class="eyebrow">What we do</p><h2>Complete waste solutions</h2><div class="grid3">
+<div class="card photo"><img loading="lazy" src="https://images.unsplash.com/photo-1737311973956-307113b3a86b?auto=format&fit=crop&q=70&w=1400" alt="Residential waste bins lined up for collection" onerror="this.remove()"><div class="pad"><h3>Residential garbage collection</h3><p>Scheduled household pickups on a simple monthly plan, with a payment record for every month.</p></div></div>
+<div class="card photo"><div class="ph e">💻</div><div class="pad"><h3>E-waste collection</h3><p>Safe collection of old computers, phones, batteries and appliances for responsible disposal.</p></div></div>
+<div class="card photo"><div class="ph l">🚚</div><div class="pad"><h3>Liquid waste removal</h3><p>Exhauster and liquid waste services handled by trained crews, in line with county regulations.</p></div></div></div></section>
+
+<section id="why" class="wrap sec split"><div class="photoframe"><img loading="lazy" src="img/flats.jpg" alt="Uncollected rubbish piled outside apartment blocks"><span class="chip">Without regular collection</span></div>
+<div><p class="eyebrow">Why it matters</p><h2>Uncollected waste is a health risk</h2><p>Heaps of rubbish attract rats and flies, block drains and spread disease. Regular, licensed collection keeps estates clean and families healthy.</p>
+<ul class="ticks"><li>Scheduled pickups, every week</li><li>Trained crews and a proper collection lorry</li><li>Safe disposal that meets county rules</li></ul><a class="btn dark" href="#contact">Book a collection</a></div></section>
+<section id="bins" class="band"><div class="wrap"><div class="split"><div><p class="eyebrow dk">Garbage bins</p><h2>Garbage bins, delivered to your gate</h2>
+<p>We supply durable, lidded bins so waste stays contained between collections. Pick the size that suits your household or business.</p>
+<ul class="ticks"><li>60L, 120L, 240L and 660L sizes</li><li>Strong plastic, easy to wheel and clean</li><li>Pair a bin with any collection plan</li></ul><a class="btn dark" href="#contact">Order a bin</a></div>
+<div class="mosaic"><img loading="lazy" src="https://images.unsplash.com/photo-1596571026162-ba38f30d222e?auto=format&fit=crop&q=70&w=1400" alt="Blue and green waste bins" onerror="this.remove()"><img loading="lazy" src="https://images.unsplash.com/photo-1761479141212-e90931a0f523?auto=format&fit=crop&q=70&w=1400" alt="Large green wheeled bin" onerror="this.remove()"><img loading="lazy" src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=70&w=1400" alt="Colour-coded bins" onerror="this.remove()"><img loading="lazy" src="https://images.unsplash.com/photo-1528190336454-13cd56b45b5a?auto=format&fit=crop&q=70&w=1400" alt="Black wheelie bin" onerror="this.remove()"></div></div></div></section>
+
+<section id="how" class="wrap sec"><p class="eyebrow">Simple process</p><h2>How it works</h2><div class="grid3 steps">
+<div><span>1</span><h3>Register</h3><p>Contact us and we register your household or business in our system.</p></div>
+<div><span>2</span><h3>We collect</h3><p>Our crews collect on your scheduled days. Need a bin? We deliver one.</p></div>
+<div><span>3</span><h3>Pay monthly</h3><p>Pay by M-Pesa, cash or bank. Every payment is recorded against your account.</p></div></div></section>
+
+<section class="cta" style="background-image:linear-gradient(rgba(15,61,46,.88),rgba(15,61,46,.9)),url('https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&q=70&w=1400')"><div class="wrap"><h2>A clean town is everyone's business.</h2><p>Join the households and businesses of Oyugis who trust Alphacity with their waste.</p><a class="btn" href="#contact">Get started</a></div></section>
+
+<section id="contact" class="wrap sec split"><div><p class="eyebrow">Contact</p><h2>Request a service</h2><p>Leave your details and our team will call you back.</p>
+<ul class="contacts"><li>📞 <a href="tel:+254795624278">+254 795 624 278</a></li><li>✉️ <a href="mailto:alphacitywaste@gmail.com">alphacitywaste@gmail.com</a></li><li>📍 Oyugis Town, Homa Bay County, Kenya</li></ul></div>
+<div class="card" id="enq"><form id="enqForm" class="stack"><label>Your name<input class="input" name="n" required></label>
+<label>Phone number<input class="input" name="p" type="tel" required></label>
+<label>Service needed<select class="input" name="s"><option>Residential garbage collection</option><option>E-waste collection</option><option>Liquid waste removal</option><option>Garbage bins</option></select></label>
+<label>Message<textarea class="input" name="m" rows="3"></textarea></label>
+<button class="btn">Send request via WhatsApp</button><small class="muted">Opens WhatsApp with your request ready to send.</small></form></div></section>
+<footer><img class="flogo" src="img/logo-dark.svg" alt="Alphacity Waste Management"><br>© Alphacity Waste Management · Oyugis, Homa Bay County · Licensed by the County Government of Homa Bay<br><small>Call <a href="tel:+254795624278">+254 795 624 278</a> · <a href="mailto:alphacitywaste@gmail.com">alphacitywaste@gmail.com</a></small><br><small>Built by <a href="https://www.deqssystems.app" target="_blank" rel="noopener">Deqs Systems</a> (www.deqssystems.app) · Photos courtesy of Unsplash contributors.</small></footer>
+
+
+<script>document.getElementById('enqForm').addEventListener('submit',function(e){e.preventDefault();var f=e.target;
+var msg='Hello Alphacity, I would like to request: '+f.s.value+'.\nName: '+f.n.value+'\nPhone: '+f.p.value+'\n'+f.m.value;
+window.open('https://wa.me/254795624278?text='+encodeURIComponent(msg),'_blank');});</script></body></html>

@@ -1,0 +1,7 @@
+{% extends "core/app.html" %}{% block content %}
+<div class="bar"><h1>Income vs expenses <small>last 6 months</small></h1><div class="acts"><a class="btn sm ghost-d" href="{% url 'export' 'payments' %}">⬇ Payments CSV</a><a class="btn sm ghost-d" href="{% url 'export' 'clients' %}">⬇ Clients CSV</a></div></div>
+<div class="stats"><div class="stat"><b>KES {{ tin }}</b>Total income</div><div class="stat warn"><b>KES {{ tout }}</b>Total expenses</div><div class="stat {% if tnet >= 0 %}good{% else %}warn{% endif %}"><b>KES {{ tnet }}</b>Net profit</div></div>
+<div class="card"><table class="tbl"><tr><th>Month</th><th style="width:40%">Income / Expenses</th><th>Income</th><th>Expenses</th><th>Net</th></tr>
+{% for r in rows %}<tr><td>{{ r.label|date:"M Y" }}</td><td><div class="bar1"><i class="in" style="width:{{ r.ip }}%"></i></div><div class="bar1"><i class="out" style="width:{{ r.op }}%"></i></div></td>
+<td>{{ r.inc }}</td><td>{{ r.out }}</td><td class="{% if r.net < 0 %}owe{% else %}gain{% endif %}">{{ r.net }}</td></tr>{% endfor %}</table></div>
+<div class="card"><h3>Clients with the highest balances</h3>{% for c in owing %}<a class="row" href="{% url 'client_detail' c.pk %}"><span>{{ c.name }} · {{ c.phone }}</span><em class="owe">KES {{ c.balance }}</em></a>{% empty %}<p class="muted">No outstanding balances.</p>{% endfor %}</div>{% endblock %}

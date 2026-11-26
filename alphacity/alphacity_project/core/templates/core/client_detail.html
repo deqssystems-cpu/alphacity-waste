@@ -1,0 +1,5 @@
+{% extends "core/app.html" %}{% block content %}
+<div class="bar"><h1>{{ c.name }}</h1><a class="btn sm ghost-d" href="{% url 'client_edit' c.pk %}">Edit</a></div>
+<div class="card info"><span>📞 {{ c.phone }}</span><span>{{ c.get_service_display }}</span><span>{{ c.estate }} {{ c.address }}</span><span>Fee: KES {{ c.monthly_fee }}/mo</span><span>Since {{ c.start_date }}</span></div>
+<div id="pay">{% include "core/partials/payments_block.html" %}</div>
+<div id="bin">{% include "core/partials/bins_block.html" %}</div>{% endblock %}

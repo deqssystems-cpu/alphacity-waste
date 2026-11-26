@@ -1,0 +1,8 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block body %}<div class="app"><aside><a class="brand" href="/"><img class="logo" src="{% static 'img/icon.svg' %}" alt=""> Alphacity</a>
+<nav><a href="{% url 'dashboard' %}">Dashboard</a><a href="{% url 'clients' %}">Clients</a>
+<a href="{% url 'payments' %}">Monthly payments</a><a href="{% url 'expenses' %}">Expenses</a><a href="{% url 'reports' %}">Reports</a><a href="{% url 'enquiries' %}">Enquiries</a>
+<a href="{% url 'admin:index' %}">Advanced admin</a></nav>
+<form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="link">Log out ({{ request.user.username }})</button></form></aside>
+<main>{% block content %}{% endblock %}</main></div>{% endblock %}

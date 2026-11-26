@@ -1,0 +1,5 @@
+{% extends "core/app.html" %}{% block content %}
+<div class="bar"><h1>Monthly payments</h1><form method="get"><input class="input" type="month" name="month" value="{{ month }}" onchange="this.form.submit()"></form></div>
+<p class="lead2">Collected: <b>KES {{ total }}</b></p>
+<div class="two"><div class="card"><h3>Paid ({{ paid|length }})</h3>{% for p in paid %}<a class="row" href="{% url 'client_detail' p.client.pk %}"><span>{{ p.client.name }}</span><em>KES {{ p.amount }}</em></a>{% empty %}<p class="muted">None yet.</p>{% endfor %}</div>
+<div class="card"><h3>Unpaid ({{ unpaid|length }})</h3>{% for c in unpaid %}<a class="row" href="{% url 'client_detail' c.pk %}"><span>{{ c.name }} · {{ c.phone }}</span><em>Record →</em></a>{% empty %}<p class="muted">All clear.</p>{% endfor %}</div></div>{% endblock %}

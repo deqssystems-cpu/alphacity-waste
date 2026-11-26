@@ -1,0 +1,5 @@
+{% extends "core/app.html" %}{% block content %}
+<h1>{% if obj %}Edit {{ obj.name }}{% else %}Register new client{% endif %}</h1>
+<form method="post" class="card stack formgrid">{% csrf_token %}
+{% for f in form %}<label>{{ f.label }}{{ f }}{{ f.errors }}</label>{% endfor %}
+<div><button class="btn">Save client</button></div></form>{% endblock %}

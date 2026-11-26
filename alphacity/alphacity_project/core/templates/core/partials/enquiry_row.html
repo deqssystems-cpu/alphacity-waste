@@ -1,0 +1,2 @@
+<div class="row enq" id="enq{{ e.pk }}"><span><b>{{ e.name }}</b> · {{ e.phone }} · {{ e.get_service_display }}<br><small class="muted">{{ e.created|date:"d M H:i" }} — {{ e.message }}</small></span>
+<button class="pill {% if e.handled %}ok{% else %}no{% endif %}" hx-post="{% url 'enquiry_toggle' e.pk %}" hx-target="#enq{{ e.pk }}" hx-swap="outerHTML">{% if e.handled %}Handled{% else %}Mark handled{% endif %}</button></div>

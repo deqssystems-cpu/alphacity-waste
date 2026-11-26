@@ -1,0 +1,2 @@
+{% extends "core/app.html" %}{% block content %}<h1>Website enquiries</h1>
+<div class="card">{% for e in items %}{% include "core/partials/enquiry_row.html" %}{% empty %}<p class="muted">No enquiries yet.</p>{% endfor %}</div>{% endblock %}

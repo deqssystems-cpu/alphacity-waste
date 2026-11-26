@@ -1,0 +1,6 @@
+{% extends "core/app.html" %}{% block content %}
+<div class="bar"><h1>Clients</h1><a class="btn sm" href="{% url 'client_new' %}">+ Register client</a></div>
+<div class="filters"><input class="input" name="q" placeholder="Search name, phone, estate…" hx-get="{% url 'clients' %}" hx-trigger="keyup changed delay:300ms" hx-target="#rows" hx-include="[name=service]">
+<select class="input" name="service" hx-get="{% url 'clients' %}" hx-target="#rows" hx-include="[name=q]"><option value="">All services</option>{% for k,l in services %}<option value="{{ k }}">{{ l }}</option>{% endfor %}</select></div>
+<table class="tbl"><thead><tr><th>Name</th><th>Phone</th><th>Service</th><th>Fee</th><th>Balance</th><th>This month</th></tr></thead>
+<tbody id="rows">{% include "core/partials/client_rows.html" %}</tbody></table>{% endblock %}

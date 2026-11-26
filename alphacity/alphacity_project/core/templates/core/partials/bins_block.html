@@ -1,0 +1,6 @@
+<div class="card"><h3>Garbage bins supplied</h3>
+<form class="inline" hx-post="{% url 'bin_add' c.pk %}" hx-target="#bin" hx-swap="innerHTML">
+{% for f in bform %}<label>{{ f.label }}{{ f }}{{ f.errors }}</label>{% endfor %}<button class="btn sm">Add</button></form>
+<table class="tbl"><tr><th>Date</th><th>Size</th><th>Qty</th><th>Price</th></tr>
+{% for b in bins %}<tr><td>{{ b.date }}</td><td>{{ b.get_size_display }}</td><td>{{ b.quantity }}</td><td>{{ b.price }}</td></tr>
+{% empty %}<tr><td colspan="4" class="muted">No bins supplied yet.</td></tr>{% endfor %}</table></div>

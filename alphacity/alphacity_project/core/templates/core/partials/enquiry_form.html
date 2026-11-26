@@ -1,0 +1,3 @@
+<form hx-post="{% url 'enquiry' %}" hx-target="#enq" hx-swap="innerHTML" class="stack">
+{% for f in form %}<label>{{ f.label }}{{ f }}{{ f.errors }}</label>{% endfor %}
+<button class="btn">Send request</button></form>

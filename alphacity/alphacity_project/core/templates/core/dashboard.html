@@ -1,0 +1,16 @@
+{% extends "core/app.html" %}{% block content %}
+<div class="banner" style="background-image:linear-gradient(100deg,rgba(15,61,46,.95) 45%,rgba(15,61,46,.5)),url('{{ img.banner }}')">
+<div><p>Welcome back, {{ request.user.username }}</p><h1>Alphacity Dashboard <small>{{ month|date:"F Y" }}</small></h1></div>
+<div class="qa"><a class="btn sm" href="{% url 'client_new' %}">+ Client</a><a class="btn sm" href="{% url 'expenses' %}">+ Expense</a></div></div>
+<div class="stats"><div class="stat"><b>{{ active_count }}</b>Active clients</div>
+<div class="stat"><b>KES {{ collected }}</b>Collected this month</div>
+<div class="stat warn"><b>KES {{ spent }}</b>Expenses this month</div>
+<div class="stat {% if net >= 0 %}good{% else %}warn{% endif %}"><b>KES {{ net }}</b>Net this month</div>
+<div class="stat"><b>{{ unpaid_count }}</b>Not yet paid</div>
+<div class="stat"><b>{{ new_enquiries }}</b><a href="{% url 'enquiries' %}">New enquiries</a></div></div>
+<div class="thumbs"><img src="{{ img.t1 }}" alt="" loading="lazy" onerror="this.remove()"><img src="{{ img.t2 }}" alt="" loading="lazy" onerror="this.remove()"><img src="{{ img.t3 }}" alt="" loading="lazy" onerror="this.remove()"></div>
+<div class="two"><div class="card"><h3>Awaiting payment <small>(expected KES {{ expected }})</small></h3>
+{% for c in unpaid %}<a class="row" href="{% url 'client_detail' c.pk %}"><span>{{ c.name }}</span><em>KES {{ c.monthly_fee }}</em></a>{% empty %}<p class="muted">Everyone has paid 🎉</p>{% endfor %}</div>
+<div class="card"><h3>Clients by service</h3>{% for l,n in by_service %}<div class="row"><span>{{ l }}</span><em>{{ n }}</em></div>{% endfor %}
+<h3>Recent payments</h3>{% for p in recent %}<div class="row"><span>{{ p.client.name }}</span><em>KES {{ p.amount }}</em></div>{% endfor %}
+<h3>Recent expenses</h3>{% for e in recent_exp %}<div class="row"><span>{{ e.get_category_display }} · {{ e.description|truncatechars:24 }}</span><em class="owe">KES {{ e.amount }}</em></div>{% empty %}<p class="muted">None this month.</p>{% endfor %}</div></div>{% endblock %}
